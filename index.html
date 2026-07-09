@@ -89,8 +89,8 @@
   }
 
   .header__photo img {
-    width: 190px;
-    height: 190px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
     object-fit: cover;
     border: 2px solid rgba(255,255,255,0.15);
@@ -245,19 +245,74 @@
     max-width: 800px;
   }
 
+   /* ---- Skills and Awards section ----
+     Same palette/card style as Projects, two columns side by side. */
+  .skills-awards {
+    width: 100%;
+    padding: 80px 60px;
+  }
+ 
+  .skills-awards__heading {
+    color: var(--text-on-light);
+    font-size: 34px;
+    font-weight: 700;
+    margin: 0 0 40px 0;
+    letter-spacing: 0.3px;
+  }
+ 
+  .skills-awards__grid {
+    display: flex;
+    gap: 32px;
+  }
+ 
+  .info-card {
+    flex: 1 1 0;
+    min-width: 0;
+    background: #131c2b;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 12px;
+    padding: 32px;
+  }
+ 
+  .info-card__title {
+    color: var(--text-on-light);
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 0 20px 0;
+  }
+ 
+  .info-card__list {
+    margin: 0;
+    padding: 0 0 0 20px;
+    list-style: disc;
+  }
+ 
+  .info-card__list li {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.7;
+    margin-bottom: 10px;
+  }
+ 
+  .info-card__list li:last-child {
+    margin-bottom: 0;
+  } 
+
   /* ---- Responsive ---- */
   @media (max-width: 640px) {
     .header { height: auto; flex-direction: column; }
     .header__text { padding: 24px; }
     .header__photo { padding: 20px 0; }
     .header__seam { display: none; }
-
-    .projects, .experience {
+ 
+    .projects, .experience, .skills-awards {
       padding: 48px 24px;
     }
-
+ 
     .project-card { flex-direction: column; }
     .project-card__thumb { width: 100%; flex-basis: auto; height: 220px; }
+ 
+    .skills-awards__grid { flex-direction: column; }
   }
 </style>
 </head>
@@ -266,18 +321,18 @@
 <header class="header">
   <div class="header__text">
     <p class="header__name">Kevin Hill</p>
-    <p class="header__description">Building things at the intersection of code and design. Currently exploring computer vision and interactive experiences.</p>
+    <p class="header__description">Western Computer Science Student, currently aiming to achieve a first year internship. I love computers and solvings problems, so why not combine my passions and make it a living? My goal is to make as many cool projects by the end of the summer to set myself up going into first year. I am interested with computer vision, machine learning, and web development. Feel free to reach out!</p>
     <ul class="header__socials">
-      <li><a href="#">GitHub</a></li>
-      <li><a href="#">LinkedIn</a></li>
-      <li><a href="#">Instagram</a></li>
+      <li><a href="https://github.com/KevinHill14" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/kevin-hill-9291693b0" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="https://www.instagram.com/kevinhill2.0?igsh=MXdxNmVveWxtODB0cA%3D%3D&utm_source=qr" target="_blank" rel="noopener">Instagram</a></li>
     </ul>
   </div>
 
   <div class="header__seam"></div>
 
   <div class="header__photo">
-    <img src="https://placehold.co/168x168" alt="Profile photo">
+    <img src="images/main_profile.png" alt="Profile photo">
   </div>
 </header>
 
@@ -285,49 +340,49 @@
   <h2 class="projects__heading">Projects</h2>
 
   <div class="project-card">
-    <img class="project-card__thumb" src="https://placehold.co/380x240" alt="Project 1 thumbnail">
+    <img class="project-card__thumb" src="images/ml_emotions_demo.png" alt="Project 1 thumbnail">
     <div class="project-card__body">
       <h3 class="project-card__title">ML Emotion Detection</h3>
       <p class="project-card__description">As a personal project, I trained a AI model to detect emotions on a persons face using OpenCV to capture what is on the camera. Learned how to prevent overfitting, actually train AI, and deploy it. I acheved 61% accuracy on my test set, and then combined 5 models with varying strengths / weaknesses to create an ensemble model. This model achived a 65% accuracy on the test data.</p>
       <div class="project-card__links">
-        <a href="#">Live Demo</a>
-        <a href="#">GitHub</a>
+        <a href="https://www.linkedin.com/posts/kevin-hill-9291693b0_machinelearning-deeplearning-computervision-ugcPost-7479689370376036352-iLTg/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGRnM_EBnibZUTd7clAn-rvObmR_ZVVI_5w" target="_blank" rel="noopener">LinkedIn Post</a>
+        <a href="https://github.com/KevinHill14/emotion_detection" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
 
   <div class="project-card">
-    <img class="project-card__thumb" src="https://placehold.co/380x240" alt="Project 2 thumbnail">
+    <img class="project-card__thumb" src="images/ai_scanner_demo.png" alt="Project 2 thumbnail">
     <div class="project-card__body">
       <h3 class="project-card__title">TensorFlow Object Detection</h3>
       <p class="project-card__description">As a personal project, I wanted to detect what objects were on a screen to hopefully impliment the software onto a tangable item. While that has yet to be comepleted, this project taght me about API calls, TensorFlow, and object detection. intially I struggled with creating the bounding boxs and all the UI, but over time I learned about convolutional neural networks, transfer learning, and how to fine-tune pre-trained models for specific object detection tasks.</p>
       <div class="project-card__links">
-        <a href="#">Live Demo</a>
-        <a href="#">GitHub</a>
+        <a href="https://www.linkedin.com/posts/kevin-hill-9291693b0_first-project-giving-my-computer-eyes-ai-ugcPost-7478600354658549760-oUS-/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGRnM_EBnibZUTd7clAn-rvObmR_ZVVI_5w" target="_blank" rel="noopener">LinkedIn Post</a>
+        <a href="https://github.com/KevinHill14/ai_camera_scanner" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
 
   <div class="project-card">
-    <img class="project-card__thumb" src="https://placehold.co/380x240" alt="Project 3 thumbnail">
+    <img class="project-card__thumb" src="images/cardiq_demo.png" alt="Project 3 thumbnail">
     <div class="project-card__body">
       <h3 class="project-card__title">Credit Card Optimizer</h3>
       <p class="project-card__description">Working with my friend Eeshan Argawal, we wanted to solve the problem of people using credit cards that dont meet their spending. Thus, we developed a optimizer that calculates, given your spending, the optimal credit card. It considers the cards perks, insurance, added benefits, points / cashback, and more. The website displays the top 3 cards which save you the most money, and how that number came to be. Learned about web design, how to work efficiently as a team, and the importantance of organization.</p>
       <div class="project-card__links">
-        <a href="#">Live Demo</a>
-        <a href="#">GitHub</a>
+        <a href="https://cardiq.fly.dev/" target="_blank" rel="noopener">Try it Yourself</a>
+        <a href="https://github.com/eesh4n/cc_optimizer" target="_blank" rel="noopener">GitHub CURRENTLY UNAILABLE</a>
       </div>
     </div>
   </div>
 
   <div class="project-card">
-    <img class="project-card__thumb" src="https://placehold.co/380x240" alt="Project 4 thumbnail">
+    <img class="project-card__thumb" src="images/dash_demo.png" alt="Project 4 thumbnail">
     <div class="project-card__body">
       <h3 class="project-card__title">2D Platformer</h3>
       <p class="project-card__description">As my final project for grade 12 computer science, I created a 2D platformer game using Raylib. What was supposed to be closer to Mario shifted into a unique platformer with elements of Geometry Dash that I am extreamly proud of. A challenge I overcame was creating moving platforms, which were solved by predicting where the player and platforms would be in the next frame. Learned about game development, collision detection, and world design.</p>
       <div class="project-card__links">
-        <a href="#">Live Demo</a>
-        <a href="#">GitHub</a>
+        <a href="https://floodrush14.itch.io/dash" target="_blank" rel="noopener">Play it Yourself</a>
+        <a href="https://github.com/KevinHill14/dash-game" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
   </div>
@@ -339,23 +394,59 @@
   <div class="experience-item">
     <div class="experience-item__row">
       <h3 class="experience-item__title">Teacher Assistant — Riverside Public School</h3>
-      <span class="experience-item__dates">Jun 2025 – Aug 2025</span>
+      <span class="experience-item__dates">Jun 2025 – Aug 2025 FIX DATE</span>
     </div>
     <p class="experience-item__description">
-      What you did, what you built, or what you learned in this role.
+      Completed a semester long Co-Op with Riverside Public School as a teacher assistant in a grade 4 class. Learned how to communicate effectively with students, other teachers, and staff. Learned how to manage a classroom and keep students engaged through creating fun and educational activities. Learned how to adapt to different learning styles and needs of students, and how to provide support and guidance to help them succeed academically and socially.
     </p>
   </div>
 
   <div class="experience-item">
     <div class="experience-item__row">
       <h3 class="experience-item__title">Teaching Executive — Oakridge STEAM ICAC</h3>
-      <span class="experience-item__dates">Jan 2024 – May 2024</span>
+      <span class="experience-item__dates">Jan 2024 – May 2024 FIX DATE</span>
     </div>
     <p class="experience-item__description">
-      Created, organized, and taught lessons for STEAM ICAC. Learned how to communicate effectively with students, other executives, and staff.
+      Created, organized, and taught lessons for STEAM ICAC. Learned how to communicate effectively with students, other executives, and staff. ADD MORE
     </p>
   </div>
 
+  <div class="experience-item">
+    <div class="experience-item__row">
+      <h3 class="experience-item__title">Teaching Volunteer — Riverside Public School</h3>
+      <span class="experience-item__dates">Jan 2024 – May 2024 FIX DATE</span>
+    </div>
+    <p class="experience-item__description">
+      BLANK TEXT.
+    </p>
+  </div>
+
+</section>
+
+<section class="skills-awards">
+  <h2 class="skills-awards__heading">Skills and Awards</h2>
+ 
+  <div class="skills-awards__grid">
+    <div class="info-card">
+      <h3 class="info-card__title">Skills</h3>
+      <ul class="info-card__list">
+        <li>Experience with Python, JavaScript, HTML, CSS, and C++</li>
+        <li>Strong problem-solving and analytical skills</li>
+        <li>Effective communication and teamwork abilities</li>
+        <li>Adaptability and willingness to learn new technologies</li>
+      </ul>
+    </div>
+ 
+    <div class="info-card">
+      <h3 class="info-card__title">Awards</h3>
+      <ul class="info-card__list">
+        <li>Nominee of The Mikalachki Scholarship</li>
+        <li>Western WISE Student</li>
+        <li>Western Scholarship of Excellence</li>
+        <li>100% in Grade 12 Computer Science and Calculus and Vectors</li>
+      </ul>
+    </div>
+  </div>
 </section>
 
 </body>
