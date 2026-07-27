@@ -6,6 +6,19 @@ export function createCardElement(project, index) {
   card.setAttribute("tabindex", "0");
   card.setAttribute("aria-label", `View details for ${project.name}`);
 
+  if (project.badge) {
+    const badge = document.createElement("span");
+    badge.className = "orbit-card__badge";
+    badge.textContent = project.badge;
+    badge.setAttribute("aria-hidden", "true");
+    card.appendChild(badge);
+
+    const srBadge = document.createElement("span");
+    srBadge.className = "visually-hidden";
+    srBadge.textContent = `Hackathon result: ${project.badge}. `;
+    card.insertBefore(srBadge, card.firstChild);
+  }
+
   const thumb = document.createElement("div");
   if (project.image) {
     thumb.className = "orbit-card__thumb";
