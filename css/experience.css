@@ -1,0 +1,57 @@
+.experience {
+  background: var(--ink);
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-list {
+  max-width: 860px;
+  margin: 0 auto;
+}
+
+.experience-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: clamp(16px, 4vw, 40px);
+  padding: 32px 0;
+  border-top: 1px solid var(--line);
+}
+
+.experience-list .experience-item:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.experience-item__dates {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+  padding-top: 4px;
+}
+
+.experience-item__title {
+  font-size: var(--step-2);
+  margin-bottom: 6px;
+}
+
+.experience-item__company {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--teal);
+  letter-spacing: 0.04em;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.experience-item__description {
+  color: var(--paper-dim);
+  line-height: 1.7;
+  max-width: 62ch;
+  margin: 0;
+}
+
+@media (max-width: 640px) {
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+}

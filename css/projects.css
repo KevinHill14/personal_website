@@ -1,0 +1,223 @@
+.projects {
+  background: var(--ink-raised);
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding-top: clamp(72px, 12vw, 140px);
+  padding-bottom: 0;
+}
+
+.projects__intro {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0 var(--gutter);
+}
+
+.projects__intro .section-heading { margin-bottom: 14px; }
+.projects__hint {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+/* ---- desktop 3D orbit ---- */
+.orbit-scroll {
+  position: relative;
+  height: 340vh;
+}
+
+.orbit-stage {
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.orbit-css3d-wrap {
+  position: relative;
+  width: 100%;
+  height: min(62vh, 620px);
+  margin: 0 auto;
+  max-width: var(--content-max);
+}
+
+.orbit-css3d-wrap .orbit-css3d {
+  position: absolute;
+  inset: 0;
+}
+
+.orbit-progress {
+  position: absolute;
+  left: var(--gutter);
+  top: clamp(16px, 3vw, 32px);
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--teal);
+  letter-spacing: 0.08em;
+}
+
+/* the card element itself — used both in CSS3D ring and mobile list */
+.orbit-card {
+  width: 250px;
+  height: 330px;
+  background: var(--ink);
+  border: 1px solid var(--line-strong);
+  padding: 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  cursor: pointer;
+  transition: border-color 0.25s ease, opacity 0.25s ease, box-shadow 0.25s ease;
+  opacity: 0.55;
+}
+
+.orbit-card.is-active {
+  border-color: var(--amber);
+  opacity: 1;
+  box-shadow: 0 0 0 1px var(--amber), 0 24px 48px -20px rgba(0,0,0,0.6);
+}
+
+.orbit-card__thumb {
+  width: 100%;
+  height: 130px;
+  background-size: cover;
+  background-position: center;
+  background-color: var(--ink-raised);
+  border: 1px solid var(--line);
+  position: relative;
+}
+
+.orbit-card__thumb--placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--muted);
+  background-image:
+    repeating-linear-gradient(45deg, var(--line) 0, var(--line) 1px, transparent 1px, transparent 12px);
+}
+
+.orbit-card__name {
+  font-size: var(--step-1);
+  line-height: 1.15;
+}
+
+.orbit-card__tag {
+  margin-top: auto;
+  display: inline-block;
+}
+
+/* ---- detail panel ---- */
+.detail-panel {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 40px var(--gutter) clamp(72px, 10vw, 120px);
+  border-top: 1px solid var(--line);
+}
+
+.detail-panel__index { display: block; margin-bottom: 16px; }
+
+.detail-panel__name {
+  font-size: var(--step-3);
+  margin-bottom: 18px;
+}
+
+.detail-panel__desc {
+  color: var(--paper-dim);
+  font-size: var(--step-1);
+  line-height: 1.7;
+  max-width: 68ch;
+  margin-bottom: 24px;
+}
+
+.detail-panel__stack {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.detail-panel__stack li {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  color: var(--teal);
+  border: 1px solid var(--line-strong);
+  padding: 5px 10px;
+  letter-spacing: 0.03em;
+}
+
+.detail-panel__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px 28px;
+}
+
+.detail-panel__links a {
+  font-family: var(--font-mono);
+  font-size: var(--step--1);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border-bottom: 1px solid var(--line-strong);
+  padding-bottom: 2px;
+  transition: color 0.15s ease, border-color 0.15s ease;
+}
+.detail-panel__links a:hover { color: var(--amber); border-color: var(--amber); }
+
+/* ---- mobile / reduced-motion fallback: vertical stack ---- */
+.orbit-mobile-list {
+  display: none;
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 40px var(--gutter) clamp(64px, 10vw, 100px);
+}
+
+.orbit-mobile-list details {
+  border-top: 1px solid var(--line);
+  padding: 20px 0;
+}
+.orbit-mobile-list details:last-child { border-bottom: 1px solid var(--line); }
+
+.orbit-mobile-list summary {
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+}
+.orbit-mobile-list summary::-webkit-details-marker { display: none; }
+
+.orbit-mobile-list summary .name {
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+}
+
+.orbit-mobile-list summary .plus {
+  font-family: var(--font-mono);
+  color: var(--amber);
+  flex-shrink: 0;
+}
+.orbit-mobile-list details[open] summary .plus { transform: rotate(45deg); }
+
+.orbit-mobile-list .body { padding-top: 16px; }
+.orbit-mobile-list .body p {
+  color: var(--paper-dim);
+  line-height: 1.7;
+  margin: 0 0 18px;
+}
+
+/* breakpoint: below this, always use the mobile stacked list */
+@media (max-width: 860px) {
+  .orbit-scroll { display: none; }
+  .orbit-mobile-list { display: block; }
+}
+
+/* reduced motion: never mount the 3D ring, regardless of width */
+.no-orbit .orbit-scroll { display: none; }
+.no-orbit .orbit-mobile-list { display: block; }
