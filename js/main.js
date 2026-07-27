@@ -4,6 +4,15 @@ import { initExperienceReveal } from "./reveal.js";
 
 document.getElementById("year").textContent = new Date().getFullYear();
 
+const emailLink = document.getElementById("email-link");
+if (emailLink) {
+  const email = `${atob(emailLink.dataset.user)}@${atob(emailLink.dataset.domain)}`;
+  emailLink.href = `mailto:${email}`;
+  emailLink.removeAttribute("data-user");
+  emailLink.removeAttribute("data-domain");
+  document.getElementById("email-text").textContent = email;
+}
+
 renderMobileList(document.querySelector(".orbit-mobile-list"), PROJECTS);
 
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
