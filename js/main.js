@@ -7,7 +7,7 @@ document.getElementById("year").textContent = new Date().getFullYear();
 renderMobileList(document.querySelector(".orbit-mobile-list"), PROJECTS);
 
 const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-const isDesktopWidth = window.matchMedia("(min-width: 861px)").matches;
+const isDesktopWidth = window.matchMedia("(min-width: 941px)").matches;
 
 if (prefersReduced) {
   document.body.classList.add("no-orbit");

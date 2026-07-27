@@ -8,7 +8,7 @@ import { createCardElement, fillDetailPanel } from "./orbit-shared.js";
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const RADIUS = 420;
+const RADIUS = 260;
 
 export function initOrbit() {
   const wrap = document.querySelector(".orbit-css3d-wrap");
@@ -32,7 +32,7 @@ export function initOrbit() {
 
   let width = wrap.clientWidth;
   let height = wrap.clientHeight;
-  const distance = 900;
+  const distance = 1300;
   const fov = 2 * Math.atan(height / 2 / distance) * (180 / Math.PI);
 
   const camera = new THREE.PerspectiveCamera(fov, width / height, 1, 5000);
