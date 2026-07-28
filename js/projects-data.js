@@ -2,10 +2,10 @@ export const PROJECTS = [
   {
     name: "RivalRuns",
     tag: "MOTION-CONTROLLED MULTIPLAYER GAME",
-    image: null,
+    image: "images/rival_runs_demo.png",
     badge: "2ND PLACE",
     description:
-      "A two-player endless runner where your body is the controller. Player A runs an obstacle course using body movement — stepping sideways to change lanes, jumping or ducking to avoid barriers, raising both hands to shield. Player B places obstacles in real time using hand gestures, trying to trip them up. The two machines talk over WebSocket while the whole thing renders in 3D. Built at Hack the Valley with Eeshan Agarwal and Lohitashwa Madhan — won 2nd place.",
+      "A two-player endless runner where your body is the controller. Player A runs an obstacle course using body movement — stepping sideways to change lanes, jumping or ducking to avoid barriers, raising both hands to shield. Player B places obstacles in real time using hand gestures, trying to trip them up. The two machines talk over WebSocket while the whole thing renders in 3D. Built at Hack the Valley's Hack Days with Eeshan Agarwal and Lohitashwa Madhan — won 2nd place.",
     stack: ["Python", "MediaPipe", "OpenCV", "Ursina / Panda3D", "asyncio", "WebSocket"],
     links: [
       { label: "Devpost", url: "https://devpost.com/software/rivalruns" },
