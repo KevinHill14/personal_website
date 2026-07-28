@@ -9,7 +9,8 @@ export const PROJECTS = [
     stack: ["Python", "MediaPipe", "OpenCV", "Ursina / Panda3D", "asyncio", "WebSocket"],
     links: [
       { label: "Devpost", url: "https://devpost.com/software/rivalruns" },
-      { label: "GitHub", url: "https://github.com/eesh4n/rivalruns" }
+      { label: "GitHub", url: "https://github.com/eesh4n/rivalruns" },
+      { label: "LinkedIn Post", url: "https://www.linkedin.com/posts/kevin-hill-9291693b0_rivalruns-share-7487249670252044288-Vw4V/?utm_source=share&utm_medium=member_desktop&rcm=ACoAAGRnM_EBnibZUTd7clAn-rvObmR_ZVVI_5w" }
     ]
   },
   {
